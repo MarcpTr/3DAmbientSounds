@@ -8,10 +8,12 @@ function App() {
 
   return (
     <>
-      <MusicPlayer music={{ url: forestCreek, name:"Forest Creek" }}></MusicPlayer>
-      <MusicPlayer music={{ url: WaterfallBig, name:"WaterFall"}}></MusicPlayer>
-      <MusicPlayer music={{ url: birdsLoop, name:"Birds" }}></MusicPlayer>
-      <MusicPlayer music={{ url: ducks, name:"Ducks" }}></MusicPlayer>
+    <div className="grid grid-cols-3 mt-80">
+      <MusicPlayer music={{ url: forestCreek, name:"Forest Creek", img:"icons8-forest-96.png"}}></MusicPlayer>
+      <MusicPlayer music={{ url: WaterfallBig, name:"WaterFall", img:"icons8-waterfall-96.png"}}></MusicPlayer>
+      <MusicPlayer music={{ url: birdsLoop, name:"Birds", img:"icons8-quail-96.png" }}></MusicPlayer>
+      <MusicPlayer music={{ url: ducks, name:"Ducks", img:"icons8-flying-duck-96.png" }}></MusicPlayer>
+    </div>
     
     </>
   );

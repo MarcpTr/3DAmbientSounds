@@ -2,15 +2,14 @@
 
 
 import React, { useState, useEffect, useRef } from 'react';
-
+import Spinner from './Spinner';
 function MusicPlayer({ music }) {
   const styles = {
-    green: {
-      color: "green",
-
+    play: {
     },
-    red: {
-      color: "red",
+    stop: {
+      filter: "brightness(01) saturate(100%) invert(17%) sepia(100%) saturate(2905%) hue-rotate(360deg)  contrast(114%)"
+
     },
   };
   const audioContextRef = useRef(null);
@@ -56,7 +55,7 @@ function MusicPlayer({ music }) {
     if (audioBufferRef.current && audioContextRef.current && !isPlaying) {
       const audioContext = audioContextRef.current;
 
-    
+
       const sourceNode = audioContext.createBufferSource();
       const gainNode = audioContext.createGain();
       const pannerNode = audioContext.createPanner();
@@ -179,11 +178,14 @@ function MusicPlayer({ music }) {
 
   return (
     <>
+    <article>
       <h1>{isPlaying ? "Reproduciendo: " + music.name : music.name}</h1>
-      <button id="playButton" onClick={!isPlaying ? playAudio : stopAudio} disabled={!loaded} style={isPlaying ? styles.green : styles.red}>{!isPlaying ? "Play" : "stop"} </button>
-      <button id="rotateButton" onClick={isRotating ? stopRotation : startRotation} style={isRotating ? styles.green : styles.red}>girar</button>
+      
+      <div className="relative  h-36 w-36">
+        <img src={music.img} id="playButton" onClick={!isPlaying ? playAudio : stopAudio} style={isPlaying ? styles.play : styles.stop} className="h-36 w-36" disabled={!loaded}></img> 
+         <img src="icons8-rotate-96.png" id="rotateButton" style={(isRotating ? null :  styles.stop )} onClick={isRotating ? stopRotation : startRotation} className={(isRotating ? "animate-spin" :  "" ) + " absolute right-0 bottom-0 h-14 w-14"}></img>
+      </div>
 
-      <br /><br />
       <label htmlFor="volumeControl">Volumen: </label>
       <input
         onChange={handleChange}
@@ -204,6 +206,7 @@ function MusicPlayer({ music }) {
         value={rotationTime}
       />
       <span id="timeValue">{rotationTime}</span>
+      </article>
     </>
   );
 }
