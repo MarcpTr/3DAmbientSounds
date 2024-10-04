@@ -1,8 +1,9 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# En construcción
+Web que permite reproducir diferentes sonidos ambientes modificando el nivel de volumen de forma individual y hacer que rote alrededor de la cabeza.
+# Tecnologías 
+ + React
+ + Vite
+ + Web Audio API
+# Enlace
+[3d-ambient-sounds.vercel.app ](https://3d-ambient-sounds-jbahbaxuv-marcs-projects-f42aea88.vercel.app/)	
+![image](https://raw.githubusercontent.com/MarcpTr/3DAmbientSounds/refs/heads/main/3DAmbientSounds.webp)
